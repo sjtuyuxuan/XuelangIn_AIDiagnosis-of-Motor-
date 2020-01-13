@@ -1,7 +1,7 @@
 # Xuelang_AI—Diagnosis-of-Motor
 Xuelang Industrial Data Challenge
 ## Question background
-      Using big data and artificial intelligence technology to automate motor abnormal sound detection, solve the pain points       that artificial detection cannot accurately and reliably identify abnormal sounds, and help upgrade lean manufacturing         and intelligent manufacturing
+      Using big data and artificial intelligence technology to automate motor abnormal sound detection, solve the pain points that artificial detection cannot accurately and reliably identify abnormal sounds, and help upgrade lean manufacturing      and intelligent manufacturing
       
 ## Data exploration
     Training set:
@@ -12,9 +12,9 @@ Xuelang Industrial Data Challenge
        Single sample 4 columns of audio with a length of 79999 and a sampling rate of 51200
       The duration is 1.5625s.
 
-    After visualization, it can be seen from the figure that the number of glitches in the positive sample is larger, and the     glitches are larger.In the time-frequency plot of the data of the positive and negative samples, the dominant frequencies     are quite different.
+    After visualization, it can be seen from the figure that the number of glitches in the positive sample is larger, and the glitches are larger.In the time-frequency plot of the data of the positive and negative samples, the dominant frequencies   are quite different.
      
-    In the original data (530 groups), there was a serious imbalance between positive and negative samples. To solve this         problem, we enhanced the positive samples. We use Gaussian white noise for enhancement, on the one hand, it reduces the       impact on the original spectrum and at the same time, it reduces the impact on statistical characteristics. Then we used       the lightgbm model and the stft-cnn model to analyze the statistical and spectral characteristics, respectively.
+    In the original data (530 groups), there was a serious imbalance between positive and negative samples. To solve this problem, we enhanced the positive samples. We use Gaussian white noise for enhancement, on the one hand, it reduces the impact on the original spectrum and at the same time, it reduces the impact on statistical characteristics. Then we used the lightgbm model and the stft-cnn model to analyze the statistical and spectral characteristics, respectively.
      
     𝑓_𝑎𝑢𝑔 (𝑥)=𝜆∗max⁡( 𝑓(𝑥))∗𝑟𝑎𝑛𝑑𝑜𝑚()
     where:
@@ -37,4 +37,40 @@ Xuelang Industrial Data Challenge
     Frequency domain characteristics: sfft transform, using CNN to extract spectrogram features
     Timing characteristics: autocorrelation, binned entropy
     Tree model construction features: Use the values of the leaf nodes output by the tree model as features
+
+## Model
+    ResNet50
+    Idea: structure data volume overfitting
+    Do short-time Fourier transform to extract stft features
+    Splicing feature channels and inputting the resnet network structure model
     
+    lightgbm model
+    Idea: Further tuning
+    No adjustment of parameters
+    5-fold cross-validation output (fast and stable)
+    
+    
+    Model advantages
+    Model advantages and program potential:
+         1 Feature-rich, including time domain and frequency domain features
+         2 The model runs fast, and 5 minutes from the feature extraction to the model run is enough
+         3 The results are stable, there is not much difference between the preliminary and live competition scores, the model has strong generalization performance and strong practicability
+         4 The model is simple and does not need to adjust parameters
+         
+         
+ ## Additional promising        
+      1 Try more different data enhancement methods to increase the amount of data
+
+      2 To further improve the CNN model, in addition to using the cosine annealing method to train the model, you can try to use Zhejiang University's AdaBound optimization method in 2019
+
+      3 Further try to use the most recent octave convolution to speed up the calculation
+
+      4 Tuning the tree model for better results
+
+      5 try more methods
+ 
+ 
+ ## Final result
+ Recall rate 100% 
+ Accuracy 89.11% 
+ 
