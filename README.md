@@ -33,7 +33,7 @@ In the original data (530 groups), there was a serious imbalance between positiv
       
 ### Statistical characteristics: Maximum, minimum, range, mean, variance, skewness, kurtosis
 ### Glitch features: ai1 and ai2 glitch number, ratio, and period
-### Frequency domain characteristics: sfft transform, using CNN to extract spectrogram features
+### Frequency domain characteristics: STFT transform, using CNN to extract spectrogram features
 ### Timing characteristics: autocorrelation, binned entropy
 ### Tree model construction features: Use the values of the leaf nodes output by the tree model as features
 
