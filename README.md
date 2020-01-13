@@ -41,35 +41,31 @@ In the original data (530 groups), there was a serious imbalance between positiv
 ### ResNet50
 #### Idea: structure data volume overfitting
 #### Do short-time Fourier transform to extract stft features
-    Splicing feature channels and inputting the resnet network structure model
+#### Splicing feature channels and inputting the resnet network structure model
     
-    lightgbm model
-    Idea: Further tuning
-    No adjustment of parameters
-    5-fold cross-validation output (fast and stable)
+### lightgbm model
+#### Idea: Further tuning
+#### No adjustment of parameters
+#### 5-fold cross-validation output (fast and stable)
     
     
-    Model advantages
-    Model advantages and program potential:
-         1 Feature-rich, including time domain and frequency domain features
-         2 The model runs fast, and 5 minutes from the feature extraction to the model run is enough
-         3 The results are stable, there is not much difference between the preliminary and live competition scores, the model has strong generalization performance and strong practicability
-         4 The model is simple and does not need to adjust parameters
+### Model advantages
+#### Model advantages and program potential:
+Feature-rich, including time domain and frequency domain features
+The model runs fast, and 5 minutes from the feature extraction to the model run is enough
+The results are stable, there is not much difference between the preliminary and live competition scores, the model has strong generalization performance and strong practicability
+The model is simple and does not need to adjust parameters
          
          
- ## Additional promising        
-      1 Try more different data enhancement methods to increase the amount of data
-
-      2 To further improve the CNN model, in addition to using the cosine annealing method to train the model, you can try to use Zhejiang University's AdaBound optimization method in 2019
-
-      3 Further try to use the most recent octave convolution to speed up the calculation
-
-      4 Tuning the tree model for better results
-
-      5 try more methods
+## Additional promising        
+#### Try more different data enhancement methods to increase the amount of data
+#### To further improve the CNN model, in addition to using the cosine annealing method to train the model, you can try to use Zhejiang University's AdaBound optimization method in 2019
+#### Further try to use the most recent octave convolution to speed up the calculation
+#### Tuning the tree model for better results
+#### try more methods
  
  
  ## Final result
- Recall rate 100% 
- Accuracy 89.11% 
+ ### Recall rate 100% 
+ ### Accuracy 89.11% 
  
