@@ -64,8 +64,37 @@ The model is simple and does not need to adjust parameters
 #### Tuning the tree model for better results
 #### try more methods
  
+## Environment
+
+Operating environment: 8g memory, windows, python3.6
+
+Dependent packages: lightgbm-2.2.3, xgboost-0.82, tsfresh-0.11.2, sklearn, multiprocessing, tqdm
+
+
+Generate results process:
+1. The training data is stored in data / Motor_tain and the test data is stored in data / Motor_testP.
+2. Run run.py in the order of steps 1, 2, 3, 4, 5;
+3. The final result is generated in the data root directory, named sub_final.csv
+
+Directory architecture:
+root: [xuelang]
++-data
+| +-Motor_tain
+| | +-Negative
+| | +-Positive
+| +-Motor_tain_tutu
+| | +-Positive
+| +-Motor_testP
+| +-stack
+| +-test
+| +-train
++-method.py
++-read_me.txt
++-run.py
  
  ## Final result
  ### Recall rate 100% 
  ### Accuracy 89.11% 
+ 
+ 
  
